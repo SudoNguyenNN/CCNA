@@ -64,6 +64,7 @@ Router(config)#ip route 0.0.0.0 0.0.0.0 192.168.30.2
 
 ### Note: Gateway PC trỏ về IP nối với SW
 
+![image](https://user-images.githubusercontent.com/50360416/194521133-e4fb4a9c-f021-45b3-841a-a266db810d9b.png)
 
 
 
