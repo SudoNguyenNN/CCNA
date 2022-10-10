@@ -67,6 +67,12 @@ Router(config)#ip route 0.0.0.0 0.0.0.0 192.168.30.2
 ![image](https://user-images.githubusercontent.com/50360416/194521133-e4fb4a9c-f021-45b3-841a-a266db810d9b.png)
 
 
+*thử định tuyến đến domain nguyennn.vn và 8.8.8.8*
+
+- Ping từ các PC đến ok
+- Ping nội bộ ok
+
+![image](https://user-images.githubusercontent.com/50360416/194806418-d150711e-89dd-4fbf-b13d-c01dbeae20eb.png)
 
 
 
