@@ -74,7 +74,15 @@ Router(config)#ip route 0.0.0.0 0.0.0.0 192.168.30.2
 
 ![image](https://user-images.githubusercontent.com/50360416/194806418-d150711e-89dd-4fbf-b13d-c01dbeae20eb.png)
 
+*Kết Quả*
 
+ping ra 8.8.8 và doamin
+
+![image](https://user-images.githubusercontent.com/50360416/194806645-01758dc0-4bf2-4fd6-886c-c55ada5683ee.png)
+
+ping nội bộ từ vlan 20 sang vlan10
+
+![image](https://user-images.githubusercontent.com/50360416/194806811-491495d6-0f10-42f8-b148-3bcb84369ce9.png)
 
 
 
