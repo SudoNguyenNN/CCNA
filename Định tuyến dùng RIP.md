@@ -1,0 +1,34 @@
+![image](https://user-images.githubusercontent.com/50360416/195251998-b9abbdb0-c8ed-4433-b3bf-ee4a3e1ef7ef.png)
+
+Cấu hình :
+
+Router rip				bật tính năng rip 
+
+	Version 2			bật tính năng version 2     /22 ( classless /  classful A , b ,C )
+  
+	No auto-summary		tắt tính năng tổng hợp tuyến đường đi
+  
+	Passive-interface g0/1		thụ động cổng g0/1 tăng hiệu năng/ tăng bảo mật
+  
+	Net 192.168.1.0
+  
+	Net 192.168.2.0	
+  
+	Net 192.168.10.0
+  
+	Ex 
+  
+  
+Nếu là router Gate thì  có 1 câu lệnh nữa
+
+	Default-information originate 		
+  
+	Def ori
+  
+ở đây có defaut route   1/  không mô tả chi tiết default đi như nào 
+
+			2/ kể cả ko có default route thì vẫn cứ giới thiệu bình thường
+      
+      
+      
+### Note: Rip có AD=120 và Metric của RIP bằng số nexthop ( route để đến đích)
