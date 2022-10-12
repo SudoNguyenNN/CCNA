@@ -1,5 +1,10 @@
 ![image](https://user-images.githubusercontent.com/50360416/195252644-8af15f39-c80b-45a3-b595-4735bb2e781c.png)
 
+*Kết Quả*
+
+![image](https://user-images.githubusercontent.com/50360416/195262719-7696701e-3a8f-43d9-acbb-2fdb15b9acaa.png)
+
+
 Cấu hình :
 
 Router rip				bật tính năng rip 
