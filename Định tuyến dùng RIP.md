@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/50360416/195251998-b9abbdb0-c8ed-4433-b3bf-ee4a3e1ef7ef.png)
+![image](https://user-images.githubusercontent.com/50360416/195252644-8af15f39-c80b-45a3-b595-4735bb2e781c.png)
 
 Cấu hình :
 
