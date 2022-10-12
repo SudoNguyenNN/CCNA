@@ -37,3 +37,15 @@ Nếu là router Gate thì  có 1 câu lệnh nữa
       
       
 ### Note: Rip có AD=120 và Metric của RIP bằng số nexthop ( route để đến đích)
+
+
+=============================================================================================
+
+### BT Tổng hợp :
+
+- Vlan
+- Trunking
+- Routing: RIP
+
+![image](https://user-images.githubusercontent.com/50360416/195269309-195e38cf-967f-409e-9da3-4deb38cbdf9c.png)
+
