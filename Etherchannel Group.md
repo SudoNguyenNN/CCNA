@@ -26,3 +26,11 @@ Port Aggregation Protocol (PAgP) or *Link Aggregation Control Protocol (LACP).*
 •	PAgP auto – không bao giờ chủ động gửi tin, chỉ trả lời khi có thg nào khác tác đông ,mong muốn thành lập etherchannel
 
 
+### Luyện tập
+
+![image](https://user-images.githubusercontent.com/50360416/196391485-e6bd1dac-72ab-4651-982a-ff2ee7229897.png)
+
+
+Kết quả : mạng hội tụ, các PC ping thông nhau
+
+![image](https://user-images.githubusercontent.com/50360416/196391903-00c651eb-60f5-4db1-ae3f-49808bbc4cec.png)
