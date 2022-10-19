@@ -11,6 +11,29 @@ DHCP(dhcp-config)#dns 8.8.8.8  : địa chỉ IP DNS
 DHCP(dhcp-config)#default-router 192.168.10.1  : Địa chỉ IP Default Gateway
 
 
+===================================
+
+ip helper-add 192.168.50.2   : Xin cấp địa chỉ IP từ cổng có địa chỉ IP 192.168.50.2
+
+
+
+Laps: 
+
+![image](https://user-images.githubusercontent.com/50360416/196653227-684e417d-4353-4e64-894b-ad38d85cc747.png)
+
+
+Xin cấp địa chỉ IP
+
+![image](https://user-images.githubusercontent.com/50360416/196653401-715c056d-5052-4786-8a16-0dbe2216b716.png)
+
+
+Ping 
+
+![image](https://user-images.githubusercontent.com/50360416/196653539-ab454ec6-9470-45bc-827a-5c1ac9099dff.png)
+
+
+
+
 
 
 
