@@ -38,52 +38,99 @@ Ping
 Câu lệnh trên Swich Core * tham khảo*
 
 Core sw brand
+
 Ena
+
 Conf t
+
 Host Brand
+
 Ip routing
+
 exit
+
 Int g1/0/1
+
 No sw
+
 No sh
+
 Ip add 192.168.70.2 255.255.255.0
+
 Ip route 0.0.0.0 0.0.0.0 192.168.70.1
+
 Exit
+
 Int g1/0/2
+
 No sw
+
 No sh
+
 Ip add 192.168.50.1 255.255.255.0
+
 Ip route 0.0.0.0 0.0.0.0 192.168.50.2
+
 Exit
+
 Int ran g1/0/3-6
+
 Channel-gr 2 mode ac
+
 Ex
+
 Int port 2
+
 Sh
+
 Sw tr en do
+
 Sw mo tr
+
 No sh
+
 Ex
+
 Vl 30
+
 Vl 40
+
 Ex
+
 Int vl 30
+
 No sh
+
 Ip add 192.168.30.1 255.255.255.0
+
 ip helper-add 192.168.50.2
+
 Ex
+
 Int vl 40
+
 No sh
+
 Ip add 192.168.40.1 255.255.255.0
+
 ip helper-add 192.168.50.2
+
 Exit
+
 Router rip
+
 Ver 2
+
 No au
+
 Net 192.168.30.0
+
 Net 192.168.40.0
+
 Net 192.168.50.0
+
 Net 192.168.70.0
+
 Exit
 
 
