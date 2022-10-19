@@ -8,7 +8,7 @@ DHCP(dhcp-config)#network 192.168.10.0 255.255.255.0  : Tạo dải cấp địa
 
 DHCP(dhcp-config)#dns 8.8.8.8  : địa chỉ IP DNS
 
-DHCP(dhcp-config)#default-router 192.168.10.1  : Địa chỉ IP Default
+DHCP(dhcp-config)#default-router 192.168.10.1  : Địa chỉ IP Default Gateway
 
 
 
