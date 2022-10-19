@@ -35,7 +35,7 @@ Ping
 
 
 
-Câu lệnh trên Swich Core * tham khảo*
+Câu lệnh trên Swich Core *tham khảo*
 
 Core sw brand
 
