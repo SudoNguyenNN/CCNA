@@ -57,23 +57,23 @@ No sh
 
 Ip add 192.168.70.3 255.255.255.0
 
-Ip route 0.0.0.0 0.0.0.0 192.168.70.1
+Ip route 0.0.0.0 0.0.0.0 192.168.70.2
 
 Exit
 
-Int g1/0/2
+Int g0/1
 
 No sw
 
 No sh
 
-Ip add 192.168.50.1 255.255.255.0
+Ip add 192.168.50.3 255.255.255.0
 
-Ip route 0.0.0.0 0.0.0.0 192.168.50.2
+Ip route 0.0.0.0 0.0.0.0 192.168.50.1
 
 Exit
 
-Int ran g1/0/3-6
+Int ran f0/3-6
 
 Channel-gr 2 mode ac
 
@@ -103,7 +103,7 @@ No sh
 
 Ip add 192.168.30.1 255.255.255.0
 
-ip helper-add 192.168.50.2
+ip helper-add 192.168.50.1
 
 Ex
 
@@ -113,7 +113,7 @@ No sh
 
 Ip add 192.168.40.1 255.255.255.0
 
-ip helper-add 192.168.50.2
+ip helper-add 192.168.50.1
 
 Exit
 
