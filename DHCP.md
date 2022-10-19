@@ -49,13 +49,13 @@ Ip routing
 
 exit
 
-Int g1/0/1
+Int f0/2
 
 No sw
 
 No sh
 
-Ip add 192.168.70.2 255.255.255.0
+Ip add 192.168.70.3 255.255.255.0
 
 Ip route 0.0.0.0 0.0.0.0 192.168.70.1
 
