@@ -65,7 +65,7 @@ Ip route 0.0.0.0 0.0.0.0 192.168.70.2
 
 Exit
 
-Int g0/1
+Int f0/1
 
 No sw
 
