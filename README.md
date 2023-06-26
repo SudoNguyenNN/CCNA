@@ -6,5 +6,5 @@ Perform laps on Packet Tracert
 - VTP (Vlan Trunking Protocol)
 - Routing Static
 - Routing RIP ver2
-
+- NAT 
 
