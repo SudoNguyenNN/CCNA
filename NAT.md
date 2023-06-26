@@ -42,5 +42,8 @@ Router(config)#ip nat inside source static tcp 192.168.10.10 80 8.8.8.8 80
 
 Router(config)#ip nat inside source static tcp 192.168.10.10 443 8.8.8.8 443
 
+**Kết quả**
 
+PC: 192.168.20.10 truy cập được web của Server: 192.168.10.10 thông qua ip public 8.8.8.8
 
+![image](https://github.com/SudoNguyenNN/CCNA/assets/50360416/a60915d6-f1af-4b9c-8768-728b4428c68e)
