@@ -1,0 +1,138 @@
+Fri Jul 7 19:33:52 2023   ISP   Router>en
+Fri Jul 7 19:33:54 2023   ISP   Router#config t
+Fri Jul 7 19:33:57 2023   ISP   Router(config)#int g0/0
+Fri Jul 7 19:34:05 2023   ISP   Router(config-if)#hostname ISP
+Fri Jul 7 19:34:09 2023   ISP   ISP(config)#int g0/0
+Fri Jul 7 19:34:21 2023   ISP   ISP(config-if)#ip add 7.7.7.2 255.255.255.0
+Fri Jul 7 19:34:23 2023   ISP   ISP(config-if)#no shut
+Fri Jul 7 19:34:29 2023   ISP   ISP(config-if)#int g0/1
+Fri Jul 7 19:34:38 2023   ISP   ISP(config-if)#ip add 9.9.9.2 255.255.255.0
+Fri Jul 7 19:34:40 2023   ISP   ISP(config-if)#no shut
+Fri Jul 7 19:34:45 2023   ISP   ISP(config-if)#int g0/2
+Fri Jul 7 19:34:52 2023   ISP   ISP(config-if)#ip add 8.8.8.1 255.255.255.0
+Fri Jul 7 19:34:54 2023   ISP   ISP(config-if)#no shut
+Fri Jul 7 19:37:14 2023   PNH-HN   Router>en
+Fri Jul 7 19:37:15 2023   PNH-HN   Router#config t
+Fri Jul 7 19:37:21 2023   PNH-HN   Router(config)#hostname PNH-HN
+Fri Jul 7 19:37:30 2023   PNH-HN   PNH-HN(config)#in g0/0
+Fri Jul 7 19:37:48 2023   PNH-HN   PNH-HN(config-if)#ip add 10.0.0.1 255.255.255.0
+Fri Jul 7 19:37:57 2023   PNH-HN   PNH-HN(config-if)#ip nat inside
+Fri Jul 7 19:37:59 2023   PNH-HN   PNH-HN(config-if)#no shut
+Fri Jul 7 19:38:02 2023   PNH-HN   PNH-HN(config-if)#int g0/1
+Fri Jul 7 19:38:20 2023   PNH-HN   PNH-HN(config-if)#ip add 7.7.7.1 255.255.255.0
+Fri Jul 7 19:38:51 2023   PNH-HN   PNH-HN(config-if)#ip nat outside
+Fri Jul 7 19:38:53 2023   PNH-HN   PNH-HN(config-if)#no shut
+Fri Jul 7 19:38:59 2023   PNH-HN   PNH-HN(config-if)#exit
+Fri Jul 7 19:39:13 2023   PNH-HN   PNH-HN(config)#ip route 0.0.0.0 0.0.0.0 7.7.7.2
+Fri Jul 7 19:39:21 2023   PNH-HN   PNH-HN(config)#acees-list 1 permit any
+Fri Jul 7 19:39:30 2023   PNH-HN   PNH-HN(config)#access-list 1 permit any
+Fri Jul 7 19:39:58 2023   PNH-HN   PNH-HN(config)#ip nat inside source list 1 interface g0/1
+Fri Jul 7 19:40:08 2023   PNH-HN   PNH-HN(config)#ip dhcp pool PNH-USER
+Fri Jul 7 19:40:17 2023   PNH-HN   PNH-HN(dhcp-config)#net 10.0.0.0 255.255.255.0
+Fri Jul 7 19:40:21 2023   PNH-HN   PNH-HN(dhcp-config)#default 10.0.0.1
+Fri Jul 7 19:40:25 2023   PNH-HN   PNH-HN(dhcp-config)#dns 8.8.8.8
+Fri Jul 7 19:40:28 2023   PNH-HN   PNH-HN(dhcp-config)#exit
+Fri Jul 7 19:40:55 2023   PNH-HN   PNH-HN(config)#ip dhcp excluded-address 10.0.0.1 10.0.0.50
+Fri Jul 7 19:41:21 2023   PNH-HN   PNH-HN(config)#ip dhcp pool PNH-USER
+Fri Jul 7 19:41:32 2023   PNH-HN   PNH-HN(dhcp-config)#option 150 ip ?
+Fri Jul 7 19:41:45 2023   PNH-HN   PNH-HN(dhcp-config)#option 150 ip 10.0.0.10
+Fri Jul 7 19:43:54 2023   VoiceServerHN   Router>en
+Fri Jul 7 19:43:59 2023   VoiceServerHN   Router#config t
+Fri Jul 7 19:44:10 2023   VoiceServerHN   Router(config)#hostname VoiceServerHN
+Fri Jul 7 19:44:20 2023   VoiceServerHN   VoiceServerHN(config)#int f0/0
+Fri Jul 7 19:44:29 2023   VoiceServerHN   VoiceServerHN(config-if)#ip add 10.0.0.10 255.255.255.0
+Fri Jul 7 19:44:31 2023   VoiceServerHN   VoiceServerHN(config-if)#no shut
+Fri Jul 7 19:45:06 2023   VoiceServerHN   VoiceServerHN(config-if)#exit
+Fri Jul 7 19:45:17 2023   VoiceServerHN   VoiceServerHN(config)#telephony-service 
+Fri Jul 7 19:45:19 2023   VoiceServerHN   VoiceServerHN(config-telephony)#?
+Fri Jul 7 19:46:16 2023   VoiceServerHN   VoiceServerHN(config-telephony)#max-ephones ?
+Fri Jul 7 19:46:20 2023   VoiceServerHN   VoiceServerHN(config-telephony)#max-ephones 42
+Fri Jul 7 19:46:24 2023   VoiceServerHN   VoiceServerHN(config-telephony)#max-dn 144
+Fri Jul 7 19:46:31 2023   VoiceServerHN   VoiceServerHN(config-telephony)#ip ?
+Fri Jul 7 19:46:36 2023   VoiceServerHN   VoiceServerHN(config-telephony)#ip source-address ?
+Fri Jul 7 19:46:45 2023   VoiceServerHN   VoiceServerHN(config-telephony)#ip source-address 10.0.0.10 port ?
+Fri Jul 7 19:47:04 2023   VoiceServerHN   VoiceServerHN(config-telephony)#ip source-address 10.0.0.10 port 2000
+Fri Jul 7 19:47:13 2023   VoiceServerHN   VoiceServerHN(config-telephony)#auto assign ?
+Fri Jul 7 19:47:18 2023   VoiceServerHN   VoiceServerHN(config-telephony)#auto assign 1 to 144
+Fri Jul 7 19:47:24 2023   VoiceServerHN   VoiceServerHN(config-telephony)#exit
+Fri Jul 7 19:47:34 2023   VoiceServerHN   VoiceServerHN(config)#ephone-dn 1
+Fri Jul 7 19:47:46 2023   VoiceServerHN   VoiceServerHN(config-ephone-dn)#number 4001
+Fri Jul 7 19:47:50 2023   VoiceServerHN   VoiceServerHN(config-ephone-dn)#ephone-dn 2
+Fri Jul 7 19:47:54 2023   VoiceServerHN   VoiceServerHN(config-ephone-dn)#number 4002
+Fri Jul 7 19:47:57 2023   VoiceServerHN   VoiceServerHN(config-ephone-dn)#ephone-dn 3
+Fri Jul 7 19:48:00 2023   VoiceServerHN   VoiceServerHN(config-ephone-dn)#number 4003
+Fri Jul 7 19:48:06 2023   VoiceServerHN   VoiceServerHN(config-ephone-dn)#exit
+Fri Jul 7 19:51:41 2023   Switch0   Switch>en
+Fri Jul 7 19:51:44 2023   Switch0   Switch#config t
+Fri Jul 7 19:51:53 2023   Switch0   Switch(config)#int range f0/1-24
+Fri Jul 7 19:52:01 2023   Switch0   Switch(config-if-range)#switchport voice vlan 1
+Fri Jul 7 19:53:14 2023   VoiceServerHN   VoiceServerHN(config)#exit
+Fri Jul 7 19:54:00 2023   VoiceServerHN   VoiceServerHN#show run
+Fri Jul 7 19:56:33 2023   PNH-HN   PNH-HN>en
+Fri Jul 7 19:56:35 2023   PNH-HN   PNH-HN#show run
+Fri Jul 7 19:59:00 2023   PNH-HCM   Router>en
+Fri Jul 7 19:59:02 2023   PNH-HCM   Router#config t
+Fri Jul 7 19:59:05 2023   PNH-HCM   Router(config)#hostname PNH-HCM
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config)#ip dhcp excluded-address 10.1.1.1 10.1.1.50
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config)#ip dhcp pool PNH-USER
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(dhcp-config)#network 10.1.1.0 255.255.255.0
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(dhcp-config)#default-router 10.1.1.1
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(dhcp-config)#option 150 ip 10.1.1.10
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(dhcp-config)#dns-server 8.8.8.8
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(dhcp-config)#interface GigabitEthernet0/0
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#ip address 10.1.1.1 255.255.255.0
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#ip nat inside
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#no shut
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#interface GigabitEthernet0/1
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#ip address 9.9.9.1 255.255.255.0
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#ip nat outside
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#no shut
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config-if)#ip nat inside source list 1 interface GigabitEthernet0/1 overload
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config)#ip classless
+Fri Jul 7 19:59:05 2023   PNH-HCM   PNH-HCM(config)#ip route 0.0.0.0 0.0.0.0 9.9.9.2 
+Fri Jul 7 19:59:25 2023   VoiceServerHN   VoiceServerHN#show run
+Fri Jul 7 20:01:13 2023   VoiceServerHCM   Router>config t
+Fri Jul 7 20:01:14 2023   VoiceServerHCM   Router>en
+Fri Jul 7 20:01:16 2023   VoiceServerHCM   Router#config t
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   Router(config)#hostname VoiceServerHCM
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config)#interface FastEthernet0/0
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-if)#ip address 10.1.1.10 255.255.255.0
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-if)#no shut
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-if)#telephony-service
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-telephony)#max-ephones 42
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-telephony)#max-dn 144
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-telephony)#ip source-address 10.1.1.10 port 2000
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-telephony)#auto assign 1 to 144
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-telephony)#ephone-dn 1
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-ephone-dn)#number 8001
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-ephone-dn)#ephone-dn 2
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-ephone-dn)#number 8002
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-ephone-dn)#ephone-dn 3
+Fri Jul 7 20:01:19 2023   VoiceServerHCM   VoiceServerHCM(config-ephone-dn)#number 8003
+Fri Jul 7 20:01:37 2023   Switch2   Switch>en
+Fri Jul 7 20:01:39 2023   Switch2   Switch#config t
+Fri Jul 7 20:01:46 2023   Switch2   Switch(config)#int range f0/1-24
+Fri Jul 7 20:01:53 2023   Switch2   Switch(config-if-range)#switchport voice vlan 1
+Fri Jul 7 20:02:41 2023   VoiceServerHN   VoiceServerHN#config t
+Fri Jul 7 20:02:51 2023   VoiceServerHN   VoiceServerHN(config)#dial-peer ?
+Fri Jul 7 20:02:58 2023   VoiceServerHN   VoiceServerHN(config)#dial-peer voice 1 voip 
+Fri Jul 7 20:03:13 2023   VoiceServerHN   VoiceServerHN(config-dial-peer)#destination-pattern ?
+Fri Jul 7 20:03:26 2023   VoiceServerHN   VoiceServerHN(config-dial-peer)#destination-pattern 8...
+Fri Jul 7 20:03:44 2023   VoiceServerHN   VoiceServerHN(config-dial-peer)#?
+Fri Jul 7 20:04:07 2023   VoiceServerHN   VoiceServerHN(config-dial-peer)#session target ipv4:9.9.9.1
+Fri Jul 7 20:04:22 2023   VoiceServerHCM   VoiceServerHCM(config-ephone-dn)#exit
+Fri Jul 7 20:04:31 2023   VoiceServerHCM   VoiceServerHCM(config)#dial-peer voice 1 voip 
+Fri Jul 7 20:04:42 2023   VoiceServerHCM   VoiceServerHCM(config-dial-peer)#destination-pattern 4...
+Fri Jul 7 20:05:02 2023   VoiceServerHCM   VoiceServerHCM(config-dial-peer)#session target ipv4:7.7.7.1
+Fri Jul 7 20:05:25 2023   PNH-HN   PNH-HN#config t
+Fri Jul 7 20:06:14 2023   PNH-HN   PNH-HN(config)#ip nat inside source static ip ?
+Fri Jul 7 20:06:16 2023   PNH-HN   PNH-HN(config)#ip nat inside source static ?
+Fri Jul 7 20:06:33 2023   PNH-HN   PNH-HN(config)#ip nat inside source static 10.0.0.10 7.7.7.1
+Fri Jul 7 20:06:55 2023   PNH-HCM   PNH-HCM(config)#ip nat inside static 10.1.1.10 9.9.9.1
+Fri Jul 7 20:07:05 2023   PNH-HCM   PNH-HCM(config)#ip nat inside source static 10.1.1.10 9.9.9.1
+Fri Jul 7 20:08:01 2023   VoiceServerHCM   VoiceServerHCM(config-dial-peer)#end
+Fri Jul 7 20:08:04 2023   VoiceServerHCM   VoiceServerHCM#show run
+Fri Jul 7 20:08:46 2023   VoiceServerHN   VoiceServerHN(config-dial-peer)#exit
+Fri Jul 7 20:08:59 2023   VoiceServerHN   VoiceServerHN(config)#ip route 0.0.0.0 0.0.0.0 10.0.0.1
+Fri Jul 7 20:09:06 2023   VoiceServerHCM   VoiceServerHCM#config t
+Fri Jul 7 20:09:14 2023   VoiceServerHCM   VoiceServerHCM(config)#ip route 0.0.0.0 0.0.0.0 10.1.1.1
